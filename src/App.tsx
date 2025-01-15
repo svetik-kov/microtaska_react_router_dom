@@ -8,15 +8,17 @@ import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
 import { Model } from "components/pages/Model"
 import { Prices } from "components/pages/Prices"
+import { PATH } from "routes/router"
 
 
-export const PATH = {
+/*export const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/abibas',
-    Prices:'/prices'
+    Prices:'/prices',
+  Protected:'/ProtectedPage'
 
-} as const;
+} as const;*/
 
 function App() {
     return (
@@ -24,10 +26,11 @@ function App() {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE3}>Abibas</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.Prices}>Цены для оптовиков</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.ABIBAS}>Abibas</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PRICES}>Цены для оптовиков</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PROTECTED}>Protected Page</NavLink></S.NavWrapper>
                    {/* <a href={PATH.PAGE3}>page3 HTML</a>*/}
                 </div>
                 <div className={styles.content}>
