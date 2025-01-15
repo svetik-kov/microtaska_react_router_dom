@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, NavLink, Outlet, Route, Routes } from "react-router-dom"
+import { Link, Navigate, NavLink, Outlet, Route, Routes, useNavigate } from "react-router-dom"
 import {Error404} from "./components/pages/Error404";
 import {Adidas} from "components/pages/Adidas";
 import {Puma} from "components/pages/Puma";
@@ -21,6 +21,10 @@ import { PATH } from "routes/router"
 } as const;*/
 
 function App() {
+  const navigate=useNavigate()
+  const navigateHandler=()=>{
+    navigate(-1)
+  }
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
@@ -34,6 +38,11 @@ function App() {
                    {/* <a href={PATH.PAGE3}>page3 HTML</a>*/}
                 </div>
                 <div className={styles.content}>
+                  <div className={styles.HorizontalNavigation}>
+                  <Link className={styles.LinkLikeButton}  to={PATH.ADIDAS}> Главная страница (Adidas)</Link>
+                 {/* <Link className={styles.LinkLikeButton} onClick={navigateHandler}  to={PATH.ADIDAS}> Назад</Link>*/}
+                    <button className={styles.ButtonLikeLink} onClick={navigateHandler}>Назад </button>
+                  </div>
                   <Outlet/>
                   {/*  <Routes>
                         <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>
