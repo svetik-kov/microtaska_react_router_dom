@@ -7,6 +7,6 @@ type Props={
 }
 export const ProtectedRoute = ({children}:Props) => {
   const logged=true
-  return logged ? children:<Navigate to={'/error'}/>
+  return logged ? children:<Navigate to={'/login'}/>
 }
 
